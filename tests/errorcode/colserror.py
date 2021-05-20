@@ -10,7 +10,8 @@ csv = pd.read_csv(csvstr)
 with open(m, "rb") as binary_file:
     modstr = binary_file.read()
 
-hbout = convert(onnx.load_from_string(modstr), "torch", csv)
+mod = onnx.load_from_string(modstr)
+hbout = convert(mod, "torch", csv)
 
 # this will give an error
 hbout.predict(csv)
