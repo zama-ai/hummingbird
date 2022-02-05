@@ -443,6 +443,8 @@ def get_sklearn_api_operator_name(model_type):
     Returns:
         A string which stands for the type of the input model in the Hummingbird conversion framework
     """
+    if model_type.__bases__[0] in sklearn_api_operator_name_map:
+        model_type = model_type.__bases__[0]
     if model_type not in sklearn_api_operator_name_map:
         raise MissingConverter("Unable to find converter for model type {}.".format(model_type))
     return sklearn_api_operator_name_map[model_type]
