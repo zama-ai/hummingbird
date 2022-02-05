@@ -32,7 +32,7 @@ def convert_sklearn_random_forest_classifier(operator, device, extra_config):
 
     # Get tree information out of the model.
     tree_infos = operator.raw_operator.estimators_
-    n_features = operator.raw_operator.n_features_
+    n_features = operator.raw_operator.n_features_in_
     classes = operator.raw_operator.classes_.tolist()
 
     # There is a bug in torch < 1.7.0 that causes a mismatch. See Issue #10
