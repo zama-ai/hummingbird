@@ -445,6 +445,8 @@ def get_sklearn_api_operator_name(model_type):
     """
     if model_type.__bases__[0] in sklearn_api_operator_name_map:
         model_type = model_type.__bases__[0]
+    if model_type.__bases__[1] in sklearn_api_operator_name_map:
+        model_type = model_type.__bases__[1]
     if model_type not in sklearn_api_operator_name_map:
         raise MissingConverter("Unable to find converter for model type {}.".format(model_type))
     return sklearn_api_operator_name_map[model_type]
