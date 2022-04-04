@@ -42,15 +42,13 @@ extra_requires = [
     "prophet==1.0.1",
 ]
 setup(
-    name="hummingbird-ml",
+    name="concrete-ml-extensions-hb",
     version=version_str,
     description="Convert trained traditional machine learning models into tensor computations",
     long_description=long_description,
     long_description_content_type="text/markdown",
     license="MIT License",
-    author="Microsoft Corporation",
-    author_email="hummingbird-dev@microsoft.com",
-    url="https://github.com/microsoft/hummingbird",
+    url="https://github.com/zama-ai/hummingbird",
     packages=packages,
     include_package_data=True,
     install_requires=install_requires,
